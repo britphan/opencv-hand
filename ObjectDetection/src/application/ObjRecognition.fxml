@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ObjRecognitionController">
+	<right>
+		<VBox alignment="CENTER" spacing="10">
+			<padding>
+				<Insets left="10" right="10" />
+			</padding>
+   <children>
+   			<Label text="Hue Start" />
+   			<Slider fx:id="hueStart" blockIncrement="1" max="180" min="0" value="20" />
+   			<Label text="Hue Stop" />
+   			<Slider fx:id="hueStop" blockIncrement="1" max="180" min="0" value="50" />
+   			<Label text="Saturation Start" />
+   			<Slider fx:id="saturationStart" blockIncrement="1" max="255" min="0" value="60" />
+   			<Label text="Saturation Stop" />
+   			<Slider fx:id="saturationStop" blockIncrement="1" max="255" min="0" value="200" />
+   			<Label text="Value Start" />
+   			<Slider fx:id="valueStart" blockIncrement="1" max="255" min="0" value="50" />
+   			<Label text="Value Stop" />
+   			<Slider fx:id="valueStop" blockIncrement="1" max="255" min="0" value="255" />
+   </children>
+		</VBox>
+	</right>
+	<center>
+		<HBox alignment="CENTER" spacing="5">
+			<padding>
+				<Insets left="10" right="10" />
+			</padding>
+   <children>
+   			<ImageView fx:id="originalFrame" rotate="180.0">
+               <rotationAxis>
+                  <Point3D y="1.0" />
+               </rotationAxis>
+            </ImageView>
+				<ImageView fx:id="maskImage" rotate="180.0">
+               <rotationAxis>
+                  <Point3D y="1.0" />
+               </rotationAxis></ImageView>
+   </children>
+		</HBox>
+	</center>
+	<bottom>
+		<VBox alignment="CENTER" spacing="15">
+			<padding>
+				<Insets bottom="25" left="25" right="25" top="25" />
+			</padding>
+   <children>
+            <Text fx:id="count" text="0 Fingers Detected">
+               <font>
+                  <Font size="18.0" />
+               </font></Text>
+   			<Button fx:id="cameraButton" alignment="center" onAction="#startCamera" text="Start camera" />
+   			<Separator />
+   			<Label fx:id="hsvCurrentValues" />
+   </children>
+		</VBox>
+	</bottom>
+</BorderPane>
